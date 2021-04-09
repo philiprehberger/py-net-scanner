@@ -64,6 +64,14 @@ Scan TCP ports on a host. `ports` can be `"common"`, a `range`, or a `list[int]`
 
 Async version using asyncio for high-performance scanning.
 
+
+## Development
+
+```bash
+pip install -e .
+python -m pytest tests/ -v
+```
+
 ## License
 
 MIT
