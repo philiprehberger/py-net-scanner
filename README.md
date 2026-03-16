@@ -1,5 +1,9 @@
 # philiprehberger-net-scanner
 
+[![Tests](https://github.com/philiprehberger/py-net-scanner/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-net-scanner/actions/workflows/publish.yml)
+[![PyPI version](https://img.shields.io/pypi/v/philiprehberger-net-scanner.svg)](https://pypi.org/project/philiprehberger-net-scanner/)
+[![License](https://img.shields.io/github/license/philiprehberger/py-net-scanner)](LICENSE)
+
 LAN device discovery and TCP port scanning.
 
 ## Install
