@@ -6,7 +6,7 @@
 
 LAN device discovery and TCP port scanning.
 
-## Install
+## Installation
 
 ```bash
 pip install philiprehberger-net-scanner
