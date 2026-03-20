@@ -52,17 +52,11 @@ ports = asyncio.run(async_scan_ports("192.168.1.1", ports=range(1, 65536), timeo
 
 ## API
 
-### `scan_network(cidr, timeout?, max_workers?, resolve_hostnames?) -> list[Device]`
-
-Discover devices on a network using TCP connect probes.
-
-### `scan_ports(host, ports?, timeout?, max_workers?) -> list[PortResult]`
-
-Scan TCP ports on a host. `ports` can be `"common"`, a `range`, or a `list[int]`.
-
-### `async_scan_ports(host, ports?, timeout?, concurrency?) -> list[PortResult]`
-
-Async version using asyncio for high-performance scanning.
+| Function / Class | Description |
+|------------------|-------------|
+| `scan_network(cidr, timeout?, max_workers?, resolve_hostnames?) -> list[Device]` | Discover devices on a network using TCP connect probes |
+| `scan_ports(host, ports?, timeout?, max_workers?) -> list[PortResult]` | Scan TCP ports on a host (`ports`: `"common"`, `range`, or `list[int]`) |
+| `async_scan_ports(host, ports?, timeout?, concurrency?) -> list[PortResult]` | Async version using asyncio for high-performance scanning |
 
 
 ## Development
