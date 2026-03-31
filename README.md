@@ -2,8 +2,7 @@
 
 [![Tests](https://github.com/philiprehberger/py-net-scanner/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-net-scanner/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-net-scanner.svg)](https://pypi.org/project/philiprehberger-net-scanner/)
-[![License](https://img.shields.io/github/license/philiprehberger/py-net-scanner)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/py-net-scanner)](https://github.com/philiprehberger/py-net-scanner/commits/main)
 
 LAN device discovery and TCP port scanning.
 
@@ -65,7 +64,6 @@ Scan TCP ports on a host. `ports` can be `"common"`, a `range`, or a `list[int]`
 
 Async version using asyncio for high-performance scanning.
 
-
 ## Development
 
 ```bash
@@ -73,6 +71,24 @@ pip install -e .
 python -m pytest tests/ -v
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/py-net-scanner)
+
+🐛 [Report issues](https://github.com/philiprehberger/py-net-scanner/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/py-net-scanner/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
