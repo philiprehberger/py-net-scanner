@@ -41,6 +41,15 @@ ports = scan_ports("192.168.1.1", ports=range(1, 1024), timeout=0.5)
 ports = scan_ports("192.168.1.1", ports=[22, 80, 443, 3306, 5432])
 ```
 
+### Single port check
+
+```python
+from philiprehberger_net_scanner import is_port_open
+
+if is_port_open("example.com", 443, timeout=1.0):
+    print("HTTPS is reachable")
+```
+
 ### Async Port Scanning
 
 ```python
@@ -52,17 +61,14 @@ ports = asyncio.run(async_scan_ports("192.168.1.1", ports=range(1, 65536), timeo
 
 ## API
 
-### `scan_network(cidr, timeout?, max_workers?, resolve_hostnames?) -> list[Device]`
-
-Discover devices on a network using TCP connect probes.
-
-### `scan_ports(host, ports?, timeout?, max_workers?) -> list[PortResult]`
-
-Scan TCP ports on a host. `ports` can be `"common"`, a `range`, or a `list[int]`.
-
-### `async_scan_ports(host, ports?, timeout?, concurrency?) -> list[PortResult]`
-
-Async version using asyncio for high-performance scanning.
+| Function / Class | Description |
+|------------------|-------------|
+| `scan_network(cidr, timeout=1.0, max_workers=64, resolve_hostnames=True)` | Discover devices on a network using TCP connect probes |
+| `scan_ports(host, ports="common", timeout=1.0, max_workers=128)` | Scan TCP ports on a host (`"common"`, `range`, or `list[int]`) |
+| `async_scan_ports(host, ports="common", timeout=1.0, concurrency=128)` | Asyncio-based version of `scan_ports` |
+| `is_port_open(host, port, timeout=1.0)` | One-off boolean check for a single TCP port |
+| `Device` | Discovered host: `ip`, `hostname`, `mac`, `response_time_ms` |
+| `PortResult` | Scan result: `number`, `state` (`"open"`/`"closed"`/`"filtered"`), `service` |
 
 ## Development
 

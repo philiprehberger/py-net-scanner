@@ -11,7 +11,14 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from typing import Iterator
 
-__all__ = ["scan_network", "scan_ports", "Device", "PortResult"]
+__all__ = [
+    "scan_network",
+    "scan_ports",
+    "async_scan_ports",
+    "is_port_open",
+    "Device",
+    "PortResult",
+]
 
 # Common ports and their services
 COMMON_PORTS: dict[int, str] = {
@@ -70,6 +77,28 @@ def _tcp_check(ip: str, port: int, timeout: float) -> bool:
         return False
     finally:
         sock.close()
+
+
+def is_port_open(host: str, port: int, timeout: float = 1.0) -> bool:
+    """Check whether a single TCP port is open on *host*.
+
+    Convenience wrapper for one-off probes — for many ports use
+    :func:`scan_ports` or :func:`async_scan_ports`.
+
+    Args:
+        host: IP address or hostname.
+        port: TCP port number.
+        timeout: Connection timeout in seconds (default ``1.0``).
+
+    Returns:
+        ``True`` if the port accepts a TCP connection, ``False`` otherwise
+        (including unresolvable host).
+    """
+    try:
+        ip = socket.gethostbyname(host)
+    except socket.gaierror:
+        return False
+    return _tcp_check(ip, port, timeout)
 
 
 def _resolve_hostname(ip: str) -> str | None:

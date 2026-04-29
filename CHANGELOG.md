@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2026-04-28)
+
+- Add `is_port_open(host, port, timeout=1.0)` convenience boolean check for a single TCP port
+- Export `async_scan_ports` (added to `__all__` so it is importable as a public API)
+- Convert README API section to standard table format
+- Replace import-only test with full test suite covering scanning and port checks
+- Fix `pyproject.toml` description to end with a period (matches README)
+
 ## 0.1.9 (2026-03-31)
 
 - Standardize README to 3-badge format with emoji Support section
